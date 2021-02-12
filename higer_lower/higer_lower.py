@@ -23,7 +23,7 @@ idx=random.sample(range(0,len(data)),len(data))
 winindex=idx[0]
 win, index=1,1
 A1, A2,score= 0,0,0
-while win :
+while win and index<len(data):
     p_logo()
     
     A1 = display_question('A', winindex)
