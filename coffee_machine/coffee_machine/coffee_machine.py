@@ -4,7 +4,7 @@ coinprint  = {0.25:"How many quarters? : ",
               0.05:"How many nicles? : ",
               0.01:"How many pennies? : "}
 
-menutable = {"espresso":[1.50,50,18,0],
+menutable = {"espresso":[1.50,50,18,0],  ## menu:[price, water, coffee, Milk]
              "latte":[2.50,200,24,150],
              "cappuccino":[3.00,250,24,100]
             }
@@ -63,7 +63,7 @@ while True:
         print_report()
     elif order =='off':
         break
-    else:
+    elif order in menutable.keys():
         ## check resources
         result=control_resources(order)
         if result>0:
