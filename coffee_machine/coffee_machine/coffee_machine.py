@@ -1,5 +1,6 @@
+from decimal import *
 coinprint  = {0.25:"How many quarters? : ",
-              0.1:"How many dimes? : ",
+              0.10:"How many dimes? : ",
               0.05:"How many nicles? : ",
               0.01:"How many pennies? : "}
 
@@ -32,7 +33,8 @@ def control_resources(order):
 def control_coins(order):
     sum=0
     for key,values in coinprint.items():
-        sum+= (key*float(input(values)))
+        temp = round(int(input(values)),2)
+        sum+= round(int(key*temp),2)
     if sum > menutable[order][0]:
         charge = sum-menutable[order][0]
         print(f"Here is ${charge} dollars in charge.")
@@ -56,6 +58,7 @@ def make_coffee(order):
 
 while True:
     order = input("What would you like? (espresso/latte/cappuccino): ")
+
     if order == 'report':
         print_report()
     elif order =='off':
