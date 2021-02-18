@@ -39,8 +39,7 @@ while win and index<len(data):
         winindex = index-1
         score+=1
     elif A1==A2:
-        sleep(1)
-        ## -> just repeat again(with another Q2 question)
+        continue
     else:win=0
 
 p_logo()
