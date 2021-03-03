@@ -29,20 +29,20 @@ def create_text():
 screen=Screen()
 screen.setup(width=WIDTH,height=HEIGHT)
 screen.listen()
-
+screen.tracer(0)
 # Get user's guessing color
 guess = screen.textinput(title = "Make your bet", prompt ="who will win the race? Enter a color:")
 colors = ["red","orange","yellow","green","blue","purple"]
 
+## create turtle obj using Class
+objs = list(Race_Turtle(name=i, index=colors.index(i)) for i in colors)
+screen.update()
 ## Write text on screen
 text = create_text()
 text.write(f"User's Choice : {guess}", align="center",font=("D2Coding",10,"normal"))
 
-## create turtle obj using Class
-objs = list(Race_Turtle(name=i, index=colors.index(i)) for i in colors)
 
 ## Turtle Racing
-screen.tracer(0)
 final = False
 winner = "None"
 
