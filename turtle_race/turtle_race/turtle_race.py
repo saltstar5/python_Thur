@@ -1,5 +1,6 @@
 from turtle import Turtle, Screen
 import random
+import time
 
 WIDTH = 500
 HEIGHT = 400
@@ -41,18 +42,21 @@ text.write(f"User's Choice : {guess}", align="center",font=("D2Coding",10,"norma
 objs = list(Race_Turtle(name=i, index=colors.index(i)) for i in colors)
 
 ## Turtle Racing
-
+screen.tracer(0)
 final = False
 winner = "None"
 
 while not final:
+    screen.update()
+    time.sleep(0.1)
     for i in objs:
+        
         final = i.start_racing(random.randint(0,10))
         
         if final :
             winner = colors[objs.index(i)]
             break
-
+screen.tracer(1)
 # display racing result
 text.clear()
 if winner == guess:
